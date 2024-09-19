@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 while :; 
 do
 	uptime_formatted=$(uptime | cut -d ',' -f1 | cut -d ' ' -f4,5)
