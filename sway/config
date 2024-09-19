@@ -20,7 +20,6 @@ set $term foot
 # on the original workspace that the command was run on.
 # set $menu dmenu_path | wmenu | xargs swaymsg exec --
 set $menu wofi --show drun
-set $killmenu wofi --show run
 
 ### Output configuration
 #
@@ -224,6 +223,12 @@ font pango: FiraCode Nerd Font Mono Regular 12
 input "type:pointer" accel_profile flat
 exec mako
 
-bindsym $mod+q exec $killmenu
+# Screenshot a window
+bindsym $mod+Print exec sway-screenshot -m window --clipboard-only
+# Screenshot a monitor
+bindsym Print exec sway-screenshot -m output --clipboard-only
+# Screenshot a region
+bindsym $mod+Shift+Print exec sway-screenshot -m region --clipboard-only
+
 
 include /etc/sway/config.d/*
